@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The list of Players</title>
+</head>
+<body>
+    <%- include('navbar'); -%>
+
+    
+     
+      <!-- <div class="columns mt-6">
+        <div class="column">
+          <div class="box p-0 ml-6 mr-6">
+            <div class=" box pt-3 mb-0" style="height: 80px; background-color: #243f85;">
+                <p class="has-text-white is-size-3 has-text-centered has-text-weight-bold ">  
+                  Current serial soccers
+                </p>
+            </div>
+            <div class=" box pt-2 pl-6 mb-0 is-flex" style="height: 50px; background-color: #d7d7ff;">
+              <p class="has-text-black is-size-4 has-text-centered has-text-weight-bold" style="width: 16%;">
+                Image
+              </p>
+              <p class="has-text-black is-size-4 has-text-centered has-text-weight-bold "style="width: 16%;">
+                Name
+              </p>
+              <p class="has-text-black is-size-4 has-text-centered has-text-weight-bold "style="width: 16%;">
+                Club
+              </p><p class="has-text-black is-size-4 has-text-centered has-text-weight-bold "style="width: 16%;">
+                Position
+              </p><p class="has-text-black is-size-4 has-text-centered has-text-weight-bold "style="width: 16%;">
+                Goals
+              </p><p class="has-text-black is-size-4 has-text-centered has-text-weight-bold "style="width: 16%;">
+                Captain
+              </p>
+             
+          </div>
+          <table class="table ml-6" style="width: 96%; height: 200px;">
+               
+            <tbody>
+               <% players.forEach(function(player){ %>
+                <tr class="has-text-centered has-text-weight-semibold ">
+                  <td style="width: 250px;" class="pl-2"><figure class="image is-3by2">
+                    <img  src=<%= player.image %> >
+                  </figure>
+                </td>
+                  <td style="width: 270px;" class="pt-6 is-size-5"> <%= player.name %> </td>
+                  <td style="width: 250px;" class="pt-6 is-size-5 has-text-grey	"> <%= player.club %> </td>
+                  <td style="width: 250px;" class="pt-6 is-size-5 has-text-grey	"> <%= player.position %> </td>
+                  <td style="width: 250px;" class="pt-6 is-size-5 has-text-grey	"> <%= player.goals %> </td>
+                  <td style="width: 250px;" class="pt-6 is-size-5 has-text-grey	"> <%= player.isCaptain %> </td>
+                  <td><div class="buttons are-small">
+                    <button class="button is-warning is-light"> <a href="/player/edit/<%= player._id %>">Edit</a></button>
+                    <button class="button is-danger is-light"><a href="/player/delete/<%= player._id %>">Delete</a></button>
+                    
+                  </div></a></td>
+                </tr>
+                <% })%>
+                </tbody>
+  </table>
+              
+          </div>
+        </div>
+        </div>
+        <div class="column">
+            <form method="post" >
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Name</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                        <input class="input is-info" name="name" type="text" placeholder="e.g. Messi">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Club</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field is-narrow">
+                        <div class="control">
+                        <div class="select is-fullwidth">
+                            	<select name="club">
+                                 	         <%for (let club of clubList){ %>
+                                 	                <option value="<%= club.name %>"><%= club.name %></option> 
+                                 	          <% } %>
+                                 	   </select>
+                                
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                  <label class="label">Position</label>
+                  </div>
+                  <div class="field-body">
+                  <div class="field">
+                      <div class="control">
+                      <input class="input is-info" name="position" type="text" placeholder="Forward">
+                      </div>
+                      
+                  </div>
+                  </div>
+              </div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                <label class="label">Goals</label>
+                </div>
+                <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                    <input class="input is-info" name="goals" type="number" placeholder="2">
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                <label class="label">Captain</label>
+                </div>
+                <div class="field-body">
+                  <div class="field is-narrow">
+                    <div class="control">
+                    <div class="select is-fullwidth">
+                          <select name="isCaptain">
+                                        <option value="true">True</option>
+                                        <option value="false">False</option>
+                                  </select>
+                            
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Image</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                        <input class="input is-info" name="image" type="text" placeholder="URL of image">
+                        </div>
+                        
+                    </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                        <button class="button is-primary ml-6"  type="submit" >
+                            Create
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+      </div> -->
+
+      
+     
+
+      <div class="is-flex-wrap-wrap columns mt-6 ml-4 mr-2">
+        <% players.forEach(function(player){ %>
+        <div class="ml-3 box" style="width: 19%;">
+          <a href="player/<%= player._id %>">
+            <figure class="image is-4by5">
+              <img   src=<%= player.image %> >
+            </figure>
+          </a>
+          
+          <p class="is-size-5 has-text-weight-bold"> <%= player.name %> </p>
+          <p class="is-size-6 has-text-weight-semibold"> <%= player.club %> </p>
+        </div>
+          <% })%>
+      </div>
+    
+
+
+</body>
+</html>

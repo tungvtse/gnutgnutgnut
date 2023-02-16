@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navbar'); -%>
+    <div class="columns mt-4">
+        <div class="column box p-0 ml-6 mr-6">
+          <div class="" >
+            <div class="box pt-2" style="height: 50px; background-color: #243f85;">
+                <p class="has-text-white is-size-4 has-text-centered has-text-weight-semibold ">
+                Matches of <%= moment().format('Do MMMM, YYYY'); %> 
+                </p>
+            </div>
+    
+            <div class="tabs is-centered has-text-weight-semibold">
+                <ul>
+                  <li ><a> Yesterday's matches
+                </a></li>
+                  <li class="is-active"><a >Today's matches</a></li>
+                  <li><a>Tomorrow's matches</a></li>
+                </ul>
+            </div>
+            <div class=" box pt-0" style="height: 40px; background-color: #d7d7ff">
+                <p class="has-text-black is-size-4 has-text-centered has-text-weight-bold ">
+                    Premier League
+                </p>
+            </div>
+            <div class="columns">
+                <div class="column is-justify-content-flex-end	 is-flex ">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" width="25px" height="25px"/>
+                    <p class="pl-2 pt-1">Arsenal</p> 
+                </div>     
+                <div class="column has-text-centered is-size-5 pt-2 has-text-info ">02:30</div>
+                <div class="column is-flex ">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/1200px-Manchester_City_FC_badge.svg.png" width="25px" height="25px"/>
+                    <p class="pl-2 pt-1">Manchester City</p> 
+                </div>
+            </div>
+            <div class=" box pt-0" style="height: 40px; background-color: #d7d7ff">
+                <p class="has-text-black is-size-4 has-text-centered has-text-weight-bold ">
+                    La Liga Santander
+                </p>
+            </div>
+            <div class="columns">
+                <div class="column is-justify-content-flex-end is-flex ">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png" width="25px" height="25px"/>
+                    <p class="pl-2 pt-2">Real Madird</p> 
+                </div>     
+                <div class="column has-text-centered is-size-5 pt-3 has-text-info ">03:00</div>
+                <div class="column is-flex ">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Elche_CF_logo.svg/800px-Elche_CF_logo.svg.png" width="25px" height="25px"/>
+                    <p class="pl-2 pt-2">Elche</p> 
+                </div>
+            </div>
+            <div class=" box pt-0" style="height: 40px; background-color: #d7d7ff">
+                <p class="has-text-black is-size-4 has-text-centered has-text-weight-bold ">
+                    Champions League
+                </p>
+            </div>
+            <div class="columns">
+                <div class="column is-justify-content-flex-end is-flex ">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Club_Brugge_KV_logo.svg/1200px-Club_Brugge_KV_logo.svg.png" width="25px" height="25px"/>
+                    <p class="pl-2 pt-2">Club Brugge</p> 
+                </div>     
+                <div class="column has-text-centered is-size-5 pt-4 has-text-info ">03:00</div>
+                <div class="column is-flex ">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/SL_Benfica_logo.svg/1200px-SL_Benfica_logo.svg.png" width="25px" height="25px"/>
+                    <p class="pl-2 pt-2">Benfica</p> 
+                </div>
+            </div>
+            <div class="columns mb-4">
+                <div class="column is-justify-content-flex-end is-flex ">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1200px-Borussia_Dortmund_logo.svg.png" width="25px" height="25px"/>
+                    <p class="pl-2 pt-2">Dortmund</p> 
+                </div>     
+                <div class="column has-text-centered is-size-5 pt-4 has-text-info ">03:00</div>
+                <div class="column is-flex ">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png" width="25px" height="25px"/>
+                    <p class="pl-2 pt-2">Chelsea</p> 
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="column box p-0 ml-6 mr-6">
+            <div class="" >
+                <div class=" box pt-2" style="height: 50px;background-color: #243f85">
+                    <p class="has-text-white is-size-4 has-text-centered has-text-weight-semibold ">
+                    Information and News 
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-white-bis ">
+                          <p class="title ">Create your own 11 teams
+                          </p>
+                          <p class="subtitle">Discover the new tool made by FptBall to create and share 11 teams made by you.</p>
+                          <div class="content">
+                            <img src="https://soccerprime.com/wp-content/uploads/2020/08/soccer-field.jpg.webp"/>
+                          </div>
+                        </article>
+                      </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+       
+      </div>
+</body>
+</html>

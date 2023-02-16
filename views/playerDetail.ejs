@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navbar'); -%>
+    <div class="columns mt-6">
+        <div class="column">
+            <figure class="image is-4by5 ml-6">
+                <img style="height: 600px; width: 500px;" src=<%= player.image %> >
+              </figure>
+        </div>
+        <div class="column">
+            <div>
+                <p class="is-size-1  has-text-weight-bold"> <%= player.name %> </p>
+                <p class="pt-4 is-size-3 has-text-grey	"> Club: <%= player.club %> </p>
+                <p class="pt-4 is-size-3 has-text-grey	"> Position: <%= player.position %> </p>
+                <p class="pt-4 is-size-3 has-text-grey	"> Number of goals: <%= player.goals %> </p>
+                <p class="pt-4 is-size-3 has-text-grey	"> Captain:  <%= player.isCaptain %> </p>
+
+                <div class="buttons">
+                    <a class="button has-text-white" href="/player/delete/<%= player._id %>" style="background-color: #243f85;">
+                        <strong>
+                            Delete
+                        </strong>
+                    </a>
+                    <a class="button has-text-white" href="/player/edit/<%= player._id %>" style="background-color: #243f85;">
+                      <strong>
+                        Edit
+                    </strong>
+                    </a>
+                    
+                  </div>
+                
+            </div>
+        </div>
+        <div class="column"></div>
+    </div>
+   
+</body>
+</html>

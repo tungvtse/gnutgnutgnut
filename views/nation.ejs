@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navbar'); -%>
+
+      <div class="columns mt-6">
+        <div class="column">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                   <% nations.forEach(function(nation){ %>
+                    
+                      <td> <%= nation.name %> </td>
+                      <td> <%= nation.description %> </td>
+                      <td><div class="buttons are-small">
+                        <button class="button is-warning is-light"> <a href="/nation/edit/<%= nation._id %>">Edit</a></button>
+                        <button class="button is-danger is-light"><a href="/nation/delete/<%= nation._id %>">Delete</a></button>
+                        
+                      </div></a></td>
+                    </tr>
+                    <% })%>
+                    </tbody>
+  </table>
+        </div>
+        <div class="column">
+            <form method="post" >
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Name</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                        <input class="input is-info" name="name" type="text" placeholder="e.g. Argentina">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+              
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Description</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                        <input class="input is-info" name="description" type="text" placeholder="Amazing team">
+                        </div>
+                        
+                    </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                        <button class="button is-primary ml-6"  type="submit" >
+                            Create
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+      </div>
+        
+    
+
+
+</body>
+</html>
